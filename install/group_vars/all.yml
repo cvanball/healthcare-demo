@@ -1,6 +1,9 @@
-install_home: "/Users/cvanball/test"
+# =========== Installation home directory variable ===========
+install_home: "/Users/cvanball/Projects/git/healthcare-demo"
+target_home: "{{ install_home }}/target"
+
 # =========== JBoss Data Virtualiation variables ===========
-jboss_home: "{{ install_home }}/jboss-dv-6.3.0"
+jboss_home: "{{ target_home }}/jboss-dv-6.4.0"
 
 # Directory for the target running instance
 jboss_eap_instance_dir: "{{ jboss_home }}/standalone"
@@ -21,10 +24,10 @@ jboss_eap_instance_cli_port: "{{ jboss_eap_instance_cli_default_port|int + jboss
 # Local directory containing the used CLI files
 cli_dir: "{{ playbook_dir }}/files/cli"
 xml_dir: "{{ playbook_dir }}/files/xml"
-jdv_cli_list: { "configure_jdv.cli" }
+jdv_cli_list: { "patch_jdv.cli" }
 
 # =========== JBoss Data Grid variables ===========
-jdg_home: "{{ install_home }}/jboss-datagrid-6.6.0-server"
+jdg_home: "{{ target_home }}/jboss-datagrid-7.1.0-server"
 
 # Directory for the target running instance
 jdg_instance_dir: "{{ jdg_home }}/standalone"
