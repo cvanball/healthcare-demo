@@ -1,4 +1,4 @@
-- name: Healthcare demo
+- name: Running Healthcare demo
   hosts: localhost
   connection: local
   tasks: 

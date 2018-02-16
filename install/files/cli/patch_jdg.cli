@@ -1,1 +1,1 @@
-patch apply binaries/jboss-datagrid-7.1.1-server-patch.zip
+patch apply binaries/jboss-datagrid-7.1.2-server-patch.zip

@@ -1,4 +1,4 @@
-- name: Healthcare demo
+- name: Installing Healthcare demo
   hosts: localhost
   connection: local
   tasks: 
@@ -14,28 +14,32 @@
       unarchive: 
         src: binaries/jboss-datagrid-7.1.0-server.zip
         dest: "{{ target_home }}"
-    - name: "Install Red Hat JBoss Data Grid 7.1.1 Server Update"
+    - name: "Install Red Hat JBoss Data Grid 7.1.2 Server Update"
       shell: 'bash -c "{{ jdg_home }}/bin/cli.sh --file={{ cli_dir }}/patch_jdg.cli"'
       ignore_errors: no        
     - name: "Install Red Hat JBoss Data Virtualization 6.4"
       shell: 'bash -c "java -jar binaries/jboss-dv-6.4.0-installer.jar {{ xml_dir }}/dv64-install.xml"'
       ignore_errors: no
-    - name: "Unzip Red Hat JBoss Data Grid Hot Rod Java Client Module"
+    - name: "Unzip Red Hat JBoss Data Grid Hot Rod Java Client Module 7.1.2"
       unarchive: 
-        src: "binaries/jboss-datagrid-7.1.1-eap-modules-remote-java-client.zip"
+        src: "binaries/jboss-datagrid-7.1.2-eap-modules-remote-java-client.zip"
         dest: "binaries/"
     - name: "Install the Red Hat JBoss Data Grid Hot Rod Java Client Module into the JDV server"
       copy:
-        src: "binaries/jboss-datagrid-7.1.1-eap-modules-remote-java-client/modules"
+        src: "binaries/jboss-datagrid-7.1.2-eap-modules-remote-java-client/modules"
         dest: "{{ jboss_home }}"
     - name: "Execute JDV CLI file(s)"
       shell: 'bash -c "nohup {{ jboss_home }}/bin/standalone.sh -c {{ jboss_eap_instance_standalone_file }} -Djboss.socket.binding.port-offset={{ jboss_eap_instance_port_offset }} -Djboss.management.native.port={{ jboss_eap_instance_cli_default_port }} -Djboss.server.base.dir={{ jboss_eap_instance_dir }}  & " && sleep {{ cli_timeout }} && {{ jboss_home }}/bin/jboss-cli.sh -c --controller=127.0.0.1:{{ jboss_eap_instance_cli_port }} --file="{{ cli_dir }}/{{ item | basename }}" && pkill -TERM -f "java(.*){{ jboss_eap_instance_dir }}"'
       with_items: "{{ jdv_cli_list }}"
       ignore_errors: no
+    - name: "Execute JDG CLI file(s)"      
+      shell: 'bash -c "nohup {{ jdg_home }}/bin/standalone.sh -c {{ jdg_instance_standalone_file }} -Djboss.socket.binding.port-offset={{ jdg_instance_port_offset }} -Djboss.management.native.port={{ jdg_instance_cli_port }} -Djboss.server.base.dir={{ jdg_instance_dir }}  & " && sleep {{ cli_timeout }} && {{ jdg_home }}/bin/cli.sh --connect --controller=127.0.0.1:{{ jdg_instance_cli_port }} --file="{{ cli_dir }}/{{ item | basename }}" && pkill -TERM -f "java(.*){{ jdg_instance_dir }}"'
+      with_items: "{{ jdg_cli_list }}"
+      ignore_errors: no
     - name: "Copy Ansible Startup script to target directory {{ target_home }}"
       copy:
         src: "{{ playbook_dir }}/run.yaml"
-        dest: "{{ target_home }}/local.yaml"       
+        dest: "{{ target_home }}"       
     - name: ""
       copy:
         src: "{{ playbook_dir }}/group_vars"

@@ -15,8 +15,8 @@
 2. [JBoss Developer Studio 11.2.0](https://developers.redhat.com/download-manager/file/devstudio-11.2.0.GA-installer-standalone.jar) 
 3. [JBoss Data Virtualization 6.4.0](https://developers.redhat.com/download-manager/file/jboss-dv-6.4.0-installer.jar)
 4. [JBoss Data Grid 7.1.0 Server](https://developers.redhat.com/download-manager/file/jboss-datagrid-7.1.0-server.zip)
-5. [JBoss Data Grid 7.1.1 Server Update](https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=55011)
-6. [JDG 7.1.1 Hot Rod Java Client Module for JBoss EAP](https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=54931)
+5. [JBoss Data Grid 7.1.2 Server Update](https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=56221)
+6. [JBoss Data Grid 7.1.2 Hot Rod Java Client Module for JBoss EAP ](https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=56241)
 
 #### Using Ansible
 To configure the environment using Ansible one might change the default installation directory of Red Hat JBoss Data Grid and Red Hat JBoss Data Virtualization to accomodate your environment.

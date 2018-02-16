@@ -39,12 +39,12 @@ jdg_instance_standalone_file: standalone.xml
 jdg_instance_port_offset: 100
 
 # Port used only during updates using the CLI (port should be available)
-jdg_instance_cli_default_port: 9999
+jdg_instance_cli_default_port: 9990
 
 # Offsetted port used for CLI updates
 jdg_instance_cli_port: "{{ jdg_instance_cli_default_port|int + jdg_instance_port_offset|int }}"
 
 # =========== Other ===========
 # Local directory containing the used CLI files
-jdg_cli_list: { "configure_jdg.cli" }
+jdg_cli_list: { "setup-jdg-cache.cli" }
 cli_timeout: 25
