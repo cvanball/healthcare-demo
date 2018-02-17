@@ -36,6 +36,8 @@
       shell: 'bash -c "nohup {{ jdg_home }}/bin/standalone.sh -c {{ jdg_instance_standalone_file }} -Djboss.socket.binding.port-offset={{ jdg_instance_port_offset }} -Djboss.management.native.port={{ jdg_instance_cli_port }} -Djboss.server.base.dir={{ jdg_instance_dir }}  & " && sleep {{ cli_timeout }} && {{ jdg_home }}/bin/cli.sh --connect --controller=127.0.0.1:{{ jdg_instance_cli_port }} --file="{{ cli_dir }}/{{ item | basename }}" && pkill -TERM -f "java(.*){{ jdg_instance_dir }}"'
       with_items: "{{ jdg_cli_list }}"
       ignore_errors: no
+    - name: "Install Apache Spark 2.2.1 with prebuilt Hadoop 2.7"
+      shell: 'bash -c "tar xvf binaries/spark-2.2.1-bin-hadoop2.7.tgz -C {{ target_home }}"'
     - name: "Copy Ansible Startup script to target directory {{ target_home }}"
       copy:
         src: "{{ playbook_dir }}/run.yaml"
