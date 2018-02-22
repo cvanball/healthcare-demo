@@ -1,0 +1,3 @@
+/subsystem=resource-adapters/resource-adapter=infinispan-hotrod-ra/connection-definitions=DataGrid_DS:add(jndi-name=java:/DataGrid_DS, class-name=org.teiid.resource.adapter.infinispan.hotrod.InfinispanManagedConnectionFactory, enabled=true, use-java-context=true)
+/subsystem=resource-adapters/resource-adapter=infinispan-hotrod-ra/connection-definitions=DataGrid_DS/config-properties=RemoteServerList:add(value=localhost:11322)
+/subsystem=resource-adapters/resource-adapter=infinispan-hotrod-ra:activate

@@ -1,0 +1,7 @@
+/subsystem=resource-adapters/resource-adapter=MedRest_RA:add(module=org.jboss.teiid.resource-adapter.webservice)
+/subsystem=resource-adapters/resource-adapter=MedRest_RA/connection-definitions=MedRest_DS:add(jndi-name=java:/MedRest_DS, class-name=org.teiid.resource.adapter.ws.WSManagedConnectionFactory, enabled=true, use-java-context=true)
+/subsystem=resource-adapters/resource-adapter=MedRest_RA/connection-definitions=MedRest_DS/config-properties=EndPoint:add(value=http://localhost:8080/odata/Alerts/medication.sideeffects?$format=json)
+/subsystem=resource-adapters/resource-adapter=MedRest_RA/connection-definitions=MedRest_DS/config-properties=SecurityType:add(value=HTTPBasic)
+/subsystem=resource-adapters/resource-adapter=MedRest_RA/connection-definitions=MedRest_DS/config-properties=AuthUserName:add(value=teiidUser)
+/subsystem=resource-adapters/resource-adapter=MedRest_RA/connection-definitions=MedRest_DS/config-properties=AuthPassword:add(value=redhat1!)
+/subsystem=resource-adapters/resource-adapter=MedRest_RA:activate

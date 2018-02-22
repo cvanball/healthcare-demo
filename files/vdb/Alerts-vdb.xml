@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<vdb name="Alerts" version="1">
+<description/>
+<property name="validationDateTime" value="Fri Jun 24 09:45:59 CEST 2016"/>
+<property name="validationVersion" value="9.0.0"/>
+<model name="MedRest">
+<source connection-jndi-name="MedRest_DS" name="MedRest" translator-name="ws"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE FOREIGN PROCEDURE invokeHttp (
+	IN action string(4000),
+	IN request object,
+	IN endpoint string(4000),
+	IN stream boolean NOT NULL,
+	OUT result blob NOT NULL RESULT,
+	OUT contentType string(4000),
+	IN headers clob
+) OPTIONS(UPDATECOUNT '1');
+
+]]></metadata>
+</model>
+<model name="MedRest_VBL" type="VIRTUAL">
+<property name="imports" value="MedRest"/>
+<metadata type="DDL"><![CDATA[
+SET NAMESPACE 'http://teiid.org/rest' AS REST;
+
+
+CREATE VIRTUAL PROCEDURE getMedicationSidfeEffects (
+) RETURNS
+	TABLE (
+		medication string(4000),
+		sideeffects string(4000),
+		interaction string(4000)
+) OPTIONS(UPDATECOUNT '1')
+	AS
+BEGIN
+	DECLARE STRING VARIABLES.qp = '';
+	SELECT A.medication AS medication, A.sideeffects AS sideeffects, A.interaction AS interaction FROM (EXEC MedRest.invokeHttp(action => 'GET', endpoint => VARIABLES.qp, stream => 'TRUE')) AS f, XMLTABLE('/response/d/results' PASSING JSONTOXML('response', f.result) COLUMNS medication string PATH 'medication/text()', sideeffects string PATH 'sideeffects/text()', interaction string PATH 'interaction/text()') AS A;
+END;
+
+]]></metadata>
+</model>
+<model name="Spark_VBL" type="VIRTUAL">
+<property name="imports" value="Spark"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE VIEW messages (
+	firstName string(4000) OPTIONS(NAMEINSOURCE 'firstName', UPDATABLE 'FALSE'),
+	lastName string(4000) OPTIONS(NAMEINSOURCE 'lastName', UPDATABLE 'FALSE'),
+	medication string(4000) OPTIONS(NAMEINSOURCE 'medication', UPDATABLE 'FALSE'),
+	highBpHistory string(4000) OPTIONS(NAMEINSOURCE 'highBpHistory', UPDATABLE 'FALSE'),
+	sys string(4000) OPTIONS(NAMEINSOURCE 'sys', UPDATABLE 'FALSE'),
+	dia string(4000) OPTIONS(NAMEINSOURCE 'dia', UPDATABLE 'FALSE'),
+	results string(4000) OPTIONS(NAMEINSOURCE 'results', UPDATABLE 'FALSE'),
+	warning string(4000) OPTIONS(NAMEINSOURCE 'warning', UPDATABLE 'FALSE')
+) 
+AS
+	SELECT
+		A.firstName, A.lastName, A.medication, A.highBpHistory, A.sys, A.dia, A.results, A.warning
+	FROM
+		(EXEC Spark.getTextFiles('*.csv')) AS f, TEXTTABLE(f.file COLUMNS firstName string, lastName string, medication string, highBpHistory string, sys string, dia string, results string, warning string) AS A;
+
+]]></metadata>
+</model>
+<model name="medication">
+<source connection-jndi-name="medication" name="medication" translator-name="postgresql"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE FOREIGN TABLE sideeffects (
+	medication string(50) NOT NULL OPTIONS(NAMEINSOURCE '"medication"', NATIVE_TYPE 'varchar'),
+	interaction string(150) NOT NULL OPTIONS(NAMEINSOURCE '"interaction"', NATIVE_TYPE 'varchar'),
+	sideeffects string(150) NOT NULL OPTIONS(NAMEINSOURCE '"sideeffects"', NATIVE_TYPE 'varchar'),
+	CONSTRAINT medicationsideeffects_pkey PRIMARY KEY(medication) OPTIONS(NAMEINSOURCE '"medicationsideeffects_pkey"')
+) OPTIONS(NAMEINSOURCE '"public"."medicationsideeffects"', UPDATABLE 'TRUE', CARDINALITY '4');
+
+]]></metadata>
+</model>
+<model name="Alerts" type="VIRTUAL">
+<property name="imports" value="MedRest"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE VIEW messages (
+	firstName string(4000) OPTIONS(NAMEINSOURCE 'firstName', UPDATABLE 'FALSE'),
+	lastName string(4000) OPTIONS(NAMEINSOURCE 'lastName', UPDATABLE 'FALSE'),
+	medication string(4000) OPTIONS(NAMEINSOURCE 'medication', UPDATABLE 'FALSE'),
+	highBpHistory string(4000) OPTIONS(NAMEINSOURCE 'highBpHistory', UPDATABLE 'FALSE'),
+	sys string(4000) OPTIONS(NAMEINSOURCE 'sys', UPDATABLE 'FALSE'),
+	dia string(4000) OPTIONS(NAMEINSOURCE 'dia', UPDATABLE 'FALSE'),
+	results string(4000) OPTIONS(NAMEINSOURCE 'results', UPDATABLE 'FALSE'),
+	warning string(4000) OPTIONS(NAMEINSOURCE 'warning', UPDATABLE 'FALSE'),
+	interaction string(150) NOT NULL,
+	sideeffects string(150) NOT NULL,
+	CONSTRAINT NewPrimaryKey PRIMARY KEY(firstName, lastName)
+) 
+AS
+	SELECT
+		a.firstName, a.lastName, a.medication, a.highBpHistory, a.sys, a.dia, a.results, a.warning, B.interaction, B.sideeffects
+	FROM
+		Spark_VBL.messages AS a, (EXEC MedRest_VBL.getMedicationSidfeEffects()) AS B
+	WHERE
+		a.medication = B.medication;
+
+]]></metadata>
+</model>
+<model name="Spark">
+<source connection-jndi-name="java:/Spark" name="Spark" translator-name="file"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE FOREIGN PROCEDURE getTextFiles (
+	IN pathAndExt string(4000) NOT NULL
+) RETURNS
+	TABLE (
+		file clob,
+		filePath string(4000)
+) OPTIONS(UPDATECOUNT '1');
+
+]]></metadata>
+</model>
+</vdb>

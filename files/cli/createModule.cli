@@ -1,0 +1,1 @@
+module add --name=org.postgresql --resources=/Users/mcouliba/Documents/_SUMMIT/2016/healthcare-demo/binaries/postgresql-9.4.1212.jar --dependencies=javax.api,javax.transaction.api

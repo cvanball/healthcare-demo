@@ -1,0 +1,2 @@
+deploy /Users/mcouliba/Documents/_SUMMIT/2016/healthcare-demo/files/vdb/Alerts-vdb.xml --force
+deploy /Users/mcouliba/Documents/_SUMMIT/2016/healthcare-demo/files/vdb/RTDS-vdb.xml --force

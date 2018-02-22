@@ -1,0 +1,41 @@
+- name: Configuring Healthcare demo
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: "Configure createDatasource_ICD10CM.cli"
+      replace:
+        path: '{{ cli_dir }}/createDatasource_ICD10CM.cli'
+        regexp: '^(.+connection-definitions=ICD10CM_DS/config-properties=Parentdirectory:add\(value=).+\)'
+        replace: '\1{{ data_dir }})'
+        backup: yes 
+    - name: "Configure createModule.cli"
+      replace:
+        path: '{{ cli_dir }}/createModule.cli'
+        regexp: '--resources=.*\.jar'
+        replace: '--resources={{ binaries_dir }}/postgresql-9.4.1212.jar'
+        backup: yes 
+    - name: "Configure deployVDB.cli"
+      replace:
+        path: '{{ cli_dir }}/deployVDB.cli'
+        regexp: 'deploy .*/(\w+-vdb\.xml)$'
+        replace: 'deploy {{ vdb_dir }}/\1'
+        backup: yes
+    - name: "Create JDV Modules"
+      shell: 'bash -c "{{ jboss_home }}/bin/jboss-cli.sh --connect --controller=localhost:{{ jboss_eap_instance_cli_default_port }} --file={{ cli_dir }}/createModule.cli "'
+      ignore_errors: yes
+    - name: "Create JDV Drivers"
+      shell: 'bash -c "{{ jboss_home }}/bin/jboss-cli.sh --connect --controller=localhost:{{ jboss_eap_instance_cli_default_port }} --file={{ cli_dir }}/createDriver.cli "'
+      ignore_errors: yes
+    - name: "Create JDV Datasources"
+      shell: 'bash -c "{{ jboss_home }}/bin/jboss-cli.sh --connect --controller=localhost:{{ jboss_eap_instance_cli_default_port }} --file={{ cli_dir }}/{{ item | basename }}"'
+      with_items: "{{ jdv_cli_datasource_list }}"
+      ignore_errors: yes
+    - name: "Reload Configuration"
+      shell: 'bash -c "{{ jboss_home }}/bin/jboss-cli.sh --connect --controller=localhost:{{ jboss_eap_instance_cli_default_port }} --command=:reload"'
+      ignore_errors: no
+    - name: "Waiting 10 seconds for reloading"
+      pause:
+        seconds: 10
+    - name: "Deploy VDBs"
+      shell: 'bash -c "{{ jboss_home }}/bin/jboss-cli.sh --connect --controller=localhost:{{ jboss_eap_instance_cli_default_port }} --file={{ cli_dir }}/deployVDB.cli "'
+      ignore_errors: no

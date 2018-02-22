@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<vdb name="RTDS" version="1">
+<description/>
+<property name="validationDateTime" value="Mon Feb 12 14:16:47 CET 2018"/>
+<property name="validationVersion" value="8.12.11"/>
+<model name="PATIENT_HISTORY">
+<source connection-jndi-name="java:jboss/mrDS" name="PATIENT_HISTORY" translator-name="postgresql"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE FOREIGN TABLE ER_VISIT (
+	id integer NOT NULL OPTIONS(NAMEINSOURCE '"id"', NATIVE_TYPE 'int4'),
+	patientId integer NOT NULL OPTIONS(NAMEINSOURCE '"patientId"', NATIVE_TYPE 'int4'),
+	visitDate timestamp NOT NULL OPTIONS(NAMEINSOURCE '"visitDate"', NATIVE_TYPE 'timestamp'),
+	diagnosis string(2147483647) OPTIONS(NAMEINSOURCE '"diagnosis"', NATIVE_TYPE 'text'),
+	CONSTRAINT ER_VISIT_pkey PRIMARY KEY(id),
+	CONSTRAINT er_fk_patient FOREIGN KEY(patientId) REFERENCES PATIENT(id)
+) OPTIONS(NAMEINSOURCE '"ER_VISIT"', UPDATABLE 'TRUE');
+
+CREATE FOREIGN TABLE PATIENT (
+	id integer NOT NULL OPTIONS(NAMEINSOURCE '"id"', NATIVE_TYPE 'int4'),
+	firstName string(2147483647) NOT NULL OPTIONS(NAMEINSOURCE '"firstName"', NATIVE_TYPE 'text'),
+	lastName string(2147483647) NOT NULL OPTIONS(NAMEINSOURCE '"lastName"', NATIVE_TYPE 'text'),
+	gender string(2147483647) NOT NULL OPTIONS(NAMEINSOURCE '"gender"', NATIVE_TYPE 'gender_type'),
+	birthDate timestamp NOT NULL OPTIONS(NAMEINSOURCE '"birthDate"', NATIVE_TYPE 'timestamp'),
+	age integer NOT NULL OPTIONS(NAMEINSOURCE '"age"', NATIVE_TYPE 'int4'),
+	highBpHistory boolean NOT NULL OPTIONS(NAMEINSOURCE '"highBpHistory"', NATIVE_TYPE 'bool'),
+	smokingHistory boolean NOT NULL OPTIONS(NAMEINSOURCE '"smokingHistory"', NATIVE_TYPE 'bool'),
+	currentSmoker boolean NOT NULL OPTIONS(NAMEINSOURCE '"currentSmoker"', NATIVE_TYPE 'bool'),
+	medication string(2147483647) OPTIONS(NAMEINSOURCE '"medication"', NATIVE_TYPE 'text'),
+	diagnosticCode string(2147483647) OPTIONS(NAMEINSOURCE '"diagnosticCode"', NATIVE_TYPE 'text'),
+	lastPrimaryCareVisit timestamp OPTIONS(NAMEINSOURCE '"lastPrimaryCareVisit"', NATIVE_TYPE 'timestamp'),
+	CONSTRAINT PATIENT_pkey PRIMARY KEY(id)
+) OPTIONS(NAMEINSOURCE '"PATIENT"', UPDATABLE 'TRUE');
+
+]]></metadata>
+</model>
+<model name="DEVICES_VBL" type="VIRTUAL">
+<property name="imports" value="DEVICES"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE VIEW Measurements (
+	id integer NOT NULL OPTIONS(NAMEINSOURCE 'id', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
+	dateRead string NOT NULL OPTIONS(NAMEINSOURCE 'dateRead', NATIVE_TYPE 'java.lang.String', UPDATABLE 'FALSE'),
+	dia integer NOT NULL OPTIONS(NAMEINSOURCE 'dia', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
+	glucoseLabel string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseLabel', NATIVE_TYPE 'java.lang.String', UPDATABLE 'FALSE'),
+	glucoseType string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseType', NATIVE_TYPE 'java.lang.String', UPDATABLE 'FALSE'),
+	glucoseValue integer NOT NULL OPTIONS(NAMEINSOURCE 'glucoseValue', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
+	mam string NOT NULL OPTIONS(NAMEINSOURCE 'mam', NATIVE_TYPE 'java.lang.String', UPDATABLE 'FALSE'),
+	map integer NOT NULL OPTIONS(NAMEINSOURCE 'map', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
+	note string OPTIONS(NAMEINSOURCE 'note', NATIVE_TYPE 'java.lang.String', UPDATABLE 'FALSE'),
+	patientId integer NOT NULL OPTIONS(NAMEINSOURCE 'patientId', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
+	pulse integer NOT NULL OPTIONS(NAMEINSOURCE 'pulse', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
+	sys integer NOT NULL OPTIONS(NAMEINSOURCE 'sys', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
+	CONSTRAINT PK_ID PRIMARY KEY(id)
+) OPTIONS(NAMEINSOURCE 'BPGLevel', "teiid_rel:MATVIEW_TTL" '0') 
+AS
+	SELECT
+		*
+	FROM
+		DEVICES.Measurements;
+
+]]></metadata>
+</model>
+<model name="ICD10CM">
+<source connection-jndi-name="java:/ICD10CM" name="ICD10CM" translator-name="file"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE FOREIGN PROCEDURE getTextFiles (
+	IN pathAndExt string(4000) NOT NULL
+) RETURNS
+	TABLE (
+		file clob,
+		filePath string(4000)
+) OPTIONS(UPDATECOUNT '1');
+
+]]></metadata>
+</model>
+<model name="ICD10CM_VBL" type="VIRTUAL">
+<property name="imports" value="ICD10CM"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE VIEW index (
+	code string(4000) OPTIONS(NAMEINSOURCE 'code', UPDATABLE 'FALSE'),
+	title string(4000) OPTIONS(NAMEINSOURCE 'title', UPDATABLE 'FALSE')
+) 
+AS
+	SELECT
+		A.code AS code, A.title AS title
+	FROM
+		(EXEC ICD10CM.getTextFiles('icd10cm.xml')) AS f, XMLTABLE('/ICD10CM.index/letter/mainTerm' PASSING XMLPARSE(DOCUMENT f.file) COLUMNS code string PATH 'code/text()', title string PATH 'title/text()') AS A;
+
+]]></metadata>
+</model>
+<model name="PATIENT360" type="VIRTUAL">
+<property name="imports" value="ICD10CM"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE VIEW PATIENT (
+	id integer NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	dateRead string NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	dia integer NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	glucoseLabel string NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	glucoseType string NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	glucoseValue integer NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	mam string NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	map integer NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	note string OPTIONS(UPDATABLE 'FALSE'),
+	pulse integer NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	sys integer NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	firstName string(2147483647) NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	lastName string(2147483647) NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	gender string(2147483647) NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	birthDate string,
+	age integer NOT NULL OPTIONS(UPDATABLE 'FALSE'),
+	highBpHistory string,
+	smokingHistory string,
+	currentSmoker string,
+	medication string(2147483647) OPTIONS(UPDATABLE 'FALSE'),
+	diagnosticCode string(2147483647) OPTIONS(UPDATABLE 'FALSE'),
+	lastPrimaryCareVisit string,
+	title string(4000) OPTIONS(UPDATABLE 'FALSE'),
+	CONSTRAINT idDateRead_PK PRIMARY KEY(id, dateRead)
+) OPTIONS(MATERIALIZED 'TRUE', UPDATABLE 'TRUE'
+, MATERIALIZED_TABLE 'MAT_CACHE.PatientMatCache'
+, "teiid_rel:MATVIEW_AFTER_LOAD_SCRIPT" 'execute MAT_CACHE.native(''swap cache names'');'
+, "teiid_rel:MATVIEW_SHARE_SCOPE" 'VDB'
+, "teiid_rel:MATVIEW_TTL" '10000'
+, "teiid_rel:MATVIEW_BEFORE_LOAD_SCRIPT" 'execute MAT_CACHE.native(''truncate cache'');'
+, "teiid_rel:MATVIEW_LOAD_SCRIPT" 'insert into MAT_CACHE.PatientMatCache select * from PATIENT360.PATIENT OPTION NOCACHE;') 
+AS
+	SELECT
+		l.id, l.dateRead, l.dia, l.glucoseLabel, l.glucoseType, l.glucoseValue, l.mam, l.map, l.note, l.pulse, l.sys, p.firstName, p.lastName, p.gender, convert(p.birthDate, string) AS birthDate, p.age, convert(p.highBpHistory, string) AS highBpHistory, convert(p.smokingHistory, string) AS smokingHistory, convert(p.currentSmoker, string) AS currentSmoker, p.medication, p.diagnosticCode, convert(p.lastPrimaryCareVisit, string) AS lastPrimaryCareVisit, i.title
+	FROM
+		PATIENT_HISTORY_VBL.PATIENT AS p LEFT OUTER JOIN DEVICES_VBL.Measurements AS l ON p.id = l.patientId, ICD10CM_VBL.index AS i
+	WHERE
+		p.diagnosticCode = i.code;
+
+]]></metadata>
+</model>
+<model name="PATIENT_HISTORY_VBL" type="VIRTUAL">
+<property name="imports" value="PATIENT_HISTORY"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE VIEW ER_VISIT (
+	id integer NOT NULL OPTIONS(NAMEINSOURCE '"id"', NATIVE_TYPE 'int4', UPDATABLE 'FALSE'),
+	patientId integer NOT NULL OPTIONS(NAMEINSOURCE '"patientId"', NATIVE_TYPE 'int4', UPDATABLE 'FALSE'),
+	visitDate timestamp NOT NULL OPTIONS(NAMEINSOURCE '"visitDate"', NATIVE_TYPE 'timestamp', UPDATABLE 'FALSE'),
+	diagnosis string(2147483647) OPTIONS(NAMEINSOURCE '"diagnosis"', NATIVE_TYPE 'text', UPDATABLE 'FALSE'),
+	CONSTRAINT ER_VISIT_pkey PRIMARY KEY(id),
+	CONSTRAINT er_fk_patient FOREIGN KEY(patientId) REFERENCES PATIENT(id)
+) OPTIONS(NAMEINSOURCE '"ER_VISIT"') 
+AS
+	SELECT * FROM PATIENT_HISTORY.ER_VISIT;
+
+CREATE VIEW PATIENT (
+	id integer NOT NULL OPTIONS(NAMEINSOURCE '"id"', NATIVE_TYPE 'int4', UPDATABLE 'FALSE'),
+	firstName string(2147483647) NOT NULL OPTIONS(NAMEINSOURCE '"firstName"', NATIVE_TYPE 'text', UPDATABLE 'FALSE'),
+	lastName string(2147483647) NOT NULL OPTIONS(NAMEINSOURCE '"lastName"', NATIVE_TYPE 'text', UPDATABLE 'FALSE'),
+	gender string(2147483647) NOT NULL OPTIONS(NAMEINSOURCE '"gender"', NATIVE_TYPE 'gender_type', UPDATABLE 'FALSE'),
+	birthDate timestamp NOT NULL OPTIONS(NAMEINSOURCE '"birthDate"', NATIVE_TYPE 'timestamp', UPDATABLE 'FALSE'),
+	age integer NOT NULL OPTIONS(NAMEINSOURCE '"age"', NATIVE_TYPE 'int4', UPDATABLE 'FALSE'),
+	highBpHistory boolean NOT NULL OPTIONS(NAMEINSOURCE '"highBpHistory"', NATIVE_TYPE 'bool', UPDATABLE 'FALSE'),
+	smokingHistory boolean NOT NULL OPTIONS(NAMEINSOURCE '"smokingHistory"', NATIVE_TYPE 'bool', UPDATABLE 'FALSE'),
+	currentSmoker boolean NOT NULL OPTIONS(NAMEINSOURCE '"currentSmoker"', NATIVE_TYPE 'bool', UPDATABLE 'FALSE'),
+	medication string(2147483647) OPTIONS(NAMEINSOURCE '"medication"', NATIVE_TYPE 'text', UPDATABLE 'FALSE'),
+	diagnosticCode string(2147483647) OPTIONS(NAMEINSOURCE '"diagnosticCode"', NATIVE_TYPE 'text', UPDATABLE 'FALSE'),
+	lastPrimaryCareVisit timestamp OPTIONS(NAMEINSOURCE '"lastPrimaryCareVisit"', NATIVE_TYPE 'timestamp', UPDATABLE 'FALSE'),
+	CONSTRAINT PATIENT_pkey PRIMARY KEY(id)
+) OPTIONS(NAMEINSOURCE '"PATIENT"') 
+AS
+	SELECT * FROM PATIENT_HISTORY.PATIENT;
+
+]]></metadata>
+</model>
+<model name="DEVICES">
+<source connection-jndi-name="java:/DataGrid_DS" name="DEVICES" translator-name="infinispan-hotrod"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE FOREIGN TABLE Measurements (
+	BPGLevelObject object OPTIONS(NAMEINSOURCE 'this', NATIVE_TYPE 'com.redhat.summit.demo.datagrid.domain.BPGLevel', SELECTABLE 'FALSE', UPDATABLE 'FALSE', SEARCHABLE 'UNSEARCHABLE'),
+	id integer NOT NULL OPTIONS(NAMEINSOURCE 'id', NATIVE_TYPE 'int'),
+	dateRead string NOT NULL OPTIONS(NAMEINSOURCE 'dateRead', NATIVE_TYPE 'java.lang.String'),
+	dia integer NOT NULL OPTIONS(NAMEINSOURCE 'dia', NATIVE_TYPE 'int'),
+	glucoseLabel string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseLabel', NATIVE_TYPE 'java.lang.String'),
+	glucoseType string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseType', NATIVE_TYPE 'java.lang.String'),
+	glucoseValue integer NOT NULL OPTIONS(NAMEINSOURCE 'glucoseValue', NATIVE_TYPE 'int'),
+	mam string NOT NULL OPTIONS(NAMEINSOURCE 'mam', NATIVE_TYPE 'java.lang.String'),
+	map integer NOT NULL OPTIONS(NAMEINSOURCE 'map', NATIVE_TYPE 'int'),
+	note string OPTIONS(NAMEINSOURCE 'note', NATIVE_TYPE 'java.lang.String'),
+	patientId integer NOT NULL OPTIONS(NAMEINSOURCE 'patientId', NATIVE_TYPE 'int'),
+	pulse integer NOT NULL OPTIONS(NAMEINSOURCE 'pulse', NATIVE_TYPE 'int'),
+	sys integer NOT NULL OPTIONS(NAMEINSOURCE 'sys', NATIVE_TYPE 'int'),
+	CONSTRAINT PK_ID PRIMARY KEY(id)
+) OPTIONS(NAMEINSOURCE 'BPGLevel', UPDATABLE 'TRUE', "teiid_ispn:cache" 'medicalCache');
+
+]]></metadata>
+</model>
+<model name="MAT_CACHE">
+<source connection-jndi-name="java:/DataGrid_DS" name="MAT_CACHE" translator-name="ispn-override"/>
+<metadata type="DDL"><![CDATA[
+
+CREATE FOREIGN TABLE PatientMatCache (
+	id integer NOT NULL,
+	dateRead string(15) NOT NULL,
+	dia integer NOT NULL,
+	glucoseLabel string(25) NOT NULL,
+	glucoseType string(25) NOT NULL,
+	glucoseValue integer NOT NULL,
+	mam string(10) NOT NULL,
+	map integer NOT NULL,
+	note string(255),
+	pulse integer NOT NULL,
+	sys integer NOT NULL,
+	firstName string(20) NOT NULL,
+	lastName string(50) NOT NULL,
+	gender string(1) NOT NULL,
+	birthDate string(10),
+	age integer NOT NULL,
+	highBpHistory string(10),
+	smokingHistory string(10),
+	currentSmoker string(10),
+	medication string(50),
+	diagnosticCode string(25),
+	lastPrimaryCareVisit string(25),
+	title string(50),
+	CONSTRAINT NewPrimaryKey PRIMARY KEY(id, dateRead)
+) OPTIONS(UPDATABLE 'TRUE', "teiid_ispn:cache" 'PatientMatCache');
+
+]]></metadata>
+</model>
+<translator name="ispn-override" type="infinispan-hotrod">
+        <property name="SupportsDirectQueryProcedure" value="true"/>
+    </translator>
+</vdb>
