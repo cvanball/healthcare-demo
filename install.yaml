@@ -54,4 +54,5 @@
         dest: "{{ target_home }}"       
     - name: ""
       shell: 'bash -c "cp -R {{ playbook_dir }}/group_vars {{ target_home }}"'       
+      
    

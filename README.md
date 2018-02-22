@@ -1,8 +1,12 @@
-## Healthcare demo
-
 ![Healthcare demo header](docs/images/header.png?raw=true "Healthcare demo")
 
-### Installation
+### Prerequisites
+
+- Requires Ansible 2.4 or newer
+- Requires PostgreSQL 9.5 or newer
+- Expects Linux or MacOS hosts
+
+### Installing the healthcare demo
 
 ``` bash
 $ cd healthcare-demo
