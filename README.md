@@ -3,8 +3,9 @@
 ### Installation
 
 ``` bash
-$ cd healthcare-demo/install
+$ cd healthcare-demo
 $ ansible-playbook local.yaml
+$ ansible-playbook configure.yaml
 ```
 
 ### Running the healthcare demo

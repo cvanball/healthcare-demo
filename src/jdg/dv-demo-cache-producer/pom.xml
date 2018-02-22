@@ -10,17 +10,12 @@
 	<artifactId>dv-demo-cache-producer</artifactId>
 	<packaging>jar</packaging>
 	<dependencies>
-		<!-- Project dependencies -->
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>dv-demo-domain</artifactId>
-		</dependency>
-	
-		
+
 		<!-- JDG dependencies -->
 		<dependency>
 			<groupId>org.infinispan</groupId>
 			<artifactId>infinispan-client-hotrod</artifactId>
+			<version>8.4.2.Final-redhat-1</version>
 		</dependency>
 		
 		<!-- PostgreSQL dependencies -->
