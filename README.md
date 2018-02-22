@@ -1,5 +1,7 @@
 ## Healthcare demo
 
+[Healthcare demo]: https://raw.githubusercontent.com/cvanball/healthcare-demo/master/docs/images/header.png?raw=true
+
 ### Installation
 
 ``` bash
