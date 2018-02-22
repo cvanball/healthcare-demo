@@ -88,7 +88,7 @@ final class PatientChart {
         this.lastName = chart.getString( JsonName.LAST_NAME );
 
         // optional
-        this.highBpHistory = ( chart.has( JsonName.HIGH_BP_HISTORY ) ? chart.getBoolean( JsonName.HIGH_BP_HISTORY ) : false );
+        this.highBpHistory = (chart.has(JsonName.HIGH_BP_HISTORY) && chart.getBoolean(JsonName.HIGH_BP_HISTORY));
         this.diastolic = ( chart.has( JsonName.DIASTOLIC ) ? chart.getInt( JsonName.DIASTOLIC ) : 0 );
         this.interactions = ( chart.has( JsonName.INTERACTION ) ? chart.getString( JsonName.INTERACTION ) : "" );
         this.medication = ( chart.has( JsonName.MEDICATION ) ? chart.getString( JsonName.MEDICATION ) : "" );

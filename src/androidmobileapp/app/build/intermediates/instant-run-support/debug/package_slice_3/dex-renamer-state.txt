@@ -1,4 +1,4 @@
-#Thu Feb 22 13:15:52 CET 2018
-base.0=/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dexMerger/debug/3
+#Thu Feb 22 16:04:57 CET 2018
+base.0=/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/transforms/dexMerger/debug/28
 path.0=classes.dex
 renamed.0=classes.dex
