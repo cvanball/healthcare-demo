@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    }
+]

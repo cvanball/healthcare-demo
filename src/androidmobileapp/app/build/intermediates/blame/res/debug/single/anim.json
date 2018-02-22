@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
+        "source": "/Users/cvanball/.android/build-cache/f2b52c3572e0ef79e07bf367dc6fa1fb006ebe3c/output/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
+        "source": "/Users/cvanball/.android/build-cache/f2b52c3572e0ef79e07bf367dc6fa1fb006ebe3c/output/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
+        "source": "/Users/cvanball/.android/build-cache/f2b52c3572e0ef79e07bf367dc6fa1fb006ebe3c/output/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
+        "source": "/Users/cvanball/.android/build-cache/f2b52c3572e0ef79e07bf367dc6fa1fb006ebe3c/output/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/anim/abc_fade_in.xml"
+    }
+]

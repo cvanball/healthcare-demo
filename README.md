@@ -2,9 +2,10 @@
 
 ### Prerequisites
 
+- Expects Linux or MacOS hosts
 - Requires Ansible 2.4 or newer
 - Requires PostgreSQL 9.5 or newer
-- Expects Linux or MacOS hosts
+- Optional Android Studio 3.0.1
 
 ### Installing the healthcare demo
 

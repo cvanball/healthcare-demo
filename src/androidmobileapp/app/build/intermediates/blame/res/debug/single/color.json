@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/res/color/abc_secondary_text_material_dark.xml"
+    }
+]

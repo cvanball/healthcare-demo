@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/cvanball/.android/build-cache/8e9da95c438694be00602fd854b8374b709d2a9a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5fedc4899e310e82412924e39a1242a1ae4b7e02/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cvanball/.android/build-cache/f2b52c3572e0ef79e07bf367dc6fa1fb006ebe3c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8de27f08bff04effee6d5f94f7bc8eb94b044a91/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_4e2ffb6749ace96a110a8a14e0d3add14cdd403e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cvanball/.android/build-cache/5bd565a2f23ace4eef758df49160aa131fb4475d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ee52171e13395646d5ea18ca0cd5e942feccea61/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cvanball/.android/build-cache/d43d1a84b8d7b434cf78dcdc12f1e41f0473421b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_200079d565d90c3205d08402e303ae1397a9b691/classes.dex" />
+    </item>
+    <item
+        jar="/Users/cvanball/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_9443cdb4e91c36194258a2ee3b943824941c71cc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cvanball/.android/build-cache/e4ca8c5e7025c91ee5b810d5471832da84aab242/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b69993d2454df2f6b3c5a799bf0a2d78c04c09cc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cvanball/.android/build-cache/d43d1a84b8d7b434cf78dcdc12f1e41f0473421b/output/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_69ad60cbf6da9dc73c763471b4c906aefe72599b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cvanball/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_9443cdb4e91c36194258a2ee3b943824941c71cc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a2a6270dd2959968de6a24d1f478a5a916fdec88">
+        <dex dex="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_09866d7c1b6e44e1da5de78c2d064d7bf541e45c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/cvanball/.android/build-cache/34b3a9fbc435e25f03a45c912e98b14f9d014d8e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a138da10d49b9456e7fb00b04ae2d097e200a984/classes.dex" />
+    </item>
+
+</items>

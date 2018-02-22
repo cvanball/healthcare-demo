@@ -1,0 +1,7 @@
+#Mon May 08 20:42:24 CEST 2017
+base.0=/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_09866d7c1b6e44e1da5de78c2d064d7bf541e45c
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_4e2ffb6749ace96a110a8a14e0d3add14cdd403e/classes.dex
+base.1=/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_4e2ffb6749ace96a110a8a14e0d3add14cdd403e
+file.0=/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_09866d7c1b6e44e1da5de78c2d064d7bf541e45c/classes.dex
