@@ -6,7 +6,7 @@
 
 ``` bash
 $ cd healthcare-demo
-$ ansible-playbook local.yaml
+$ ansible-playbook install.yaml
 $ ansible-playbook configure.yaml
 ```
 
