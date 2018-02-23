@@ -1,0 +1,4 @@
+/subsystem=resource-adapters/resource-adapter=Spark_RA:add(module=org.jboss.teiid.resource-adapter.file)
+/subsystem=resource-adapters/resource-adapter=Spark_RA/connection-definitions=Spark_DS:add(jndi-name=java:/Spark, class-name=org.teiid.resource.adapter.file.FileManagedConnectionFactory, enabled=true, use-java-context=true)
+/subsystem=resource-adapters/resource-adapter=Spark_RA/connection-definitions=Spark_DS/config-properties=ParentDirectory:add(value=DATA_DIR)
+/subsystem=resource-adapters/resource-adapter=Spark_RA:activate

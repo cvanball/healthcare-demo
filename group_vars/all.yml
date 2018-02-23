@@ -33,7 +33,8 @@ jdv_cli_datasource_list:
   - "createDatasource_Medication.cli"
   - "createDatasource_MedRest.cli"
   - "createDatasource_MR.cli"
-  - "createDatasource_DataGrid.cli" 
+  - "createDatasource_DataGrid.cli"
+  - "createDatasource_Spark.cli" 
 
 # =========== JBoss Data Grid variables ===========
 jdg_home: "{{ target_home }}/jboss-datagrid-7.1.0-server"

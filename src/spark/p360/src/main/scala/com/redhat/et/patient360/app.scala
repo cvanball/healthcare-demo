@@ -10,7 +10,9 @@ object QueryApp extends AppCommon {
     require(args.length == 4, "usage:  QueryApp USERNAME PASSWORD JDBC_URL TABLE_NAME")
     val source = sqlContext.read.format("jdbc").options(Map("user" -> args(0), "password" -> args(1),"url" -> args(2),"dbtable" -> args(3))).load()
     val results = Queries.bpWarnings(source)
+    val outputDir = System.getProperty("SPARK_OUTPUT_DIR")
+
     results.show(results.count.toInt, false)
-    results.write.format("com.databricks.spark.csv").save("/Users/cvanball/summit/p360_output/alerts.csv")
+    results.write.format("com.databricks.spark.csv").save(outputDir + "/alerts.csv")
   }
 }
