@@ -22,7 +22,7 @@ def commonSettings = Seq(
   )
 )
 
-seq(commonSettings:_*)
+Seq(commonSettings:_*)
 
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature")
 

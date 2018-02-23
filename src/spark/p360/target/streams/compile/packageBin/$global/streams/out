@@ -1,0 +1,27 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/patient360_2.11-0.0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/redhat/et/patient360/QueryApp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com/redhat/et/patient360/QueryApp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/redhat/et/patient360/Queries.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com/redhat/et/patient360/Queries.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/redhat/et/patient360/Queries$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com/redhat/et/patient360/Queries$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/redhat/et/patient360[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com/redhat/et/patient360[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/redhat/et[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com/redhat/et[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/redhat[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com/redhat[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/redhat/et/patient360/Queries$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com/redhat/et/patient360/Queries$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/redhat/et/patient360/QueryApp$$anonfun$appMain$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com/redhat/et/patient360/QueryApp$$anonfun$appMain$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/redhat/et/patient360/Queries$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com/redhat/et/patient360/Queries$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/redhat/et/patient360/QueryApp$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com/redhat/et/patient360/QueryApp$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/redhat/et/patient360/Queries$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cvanball/Projects/git/healthcare-demo/src/spark/p360/target/scala-2.11/classes/com/redhat/et/patient360/Queries$.class[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
