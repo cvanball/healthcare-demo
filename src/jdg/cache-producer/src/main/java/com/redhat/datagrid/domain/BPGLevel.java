@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * Created by mcouliba on 22/02/2018.
  */
-@ProtoMessage(name = "BPGLevel")
+@ProtoMessage(name = "Measurements")
 public class BPGLevel {
 
     private int id;

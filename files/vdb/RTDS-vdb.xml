@@ -39,18 +39,18 @@ CREATE FOREIGN TABLE PATIENT (
 <metadata type="DDL"><![CDATA[
 
 CREATE VIEW Measurements (
-	id integer NOT NULL OPTIONS(NAMEINSOURCE 'id', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
-	dateRead string NOT NULL OPTIONS(NAMEINSOURCE 'dateRead', NATIVE_TYPE 'java.lang.String', UPDATABLE 'FALSE'),
-	dia integer NOT NULL OPTIONS(NAMEINSOURCE 'dia', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
-	glucoseLabel string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseLabel', NATIVE_TYPE 'java.lang.String', UPDATABLE 'FALSE'),
-	glucoseType string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseType', NATIVE_TYPE 'java.lang.String', UPDATABLE 'FALSE'),
-	glucoseValue integer NOT NULL OPTIONS(NAMEINSOURCE 'glucoseValue', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
-	mam string NOT NULL OPTIONS(NAMEINSOURCE 'mam', NATIVE_TYPE 'java.lang.String', UPDATABLE 'FALSE'),
-	map integer NOT NULL OPTIONS(NAMEINSOURCE 'map', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
-	note string OPTIONS(NAMEINSOURCE 'note', NATIVE_TYPE 'java.lang.String', UPDATABLE 'FALSE'),
-	patientId integer NOT NULL OPTIONS(NAMEINSOURCE 'patientId', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
-	pulse integer NOT NULL OPTIONS(NAMEINSOURCE 'pulse', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
-	sys integer NOT NULL OPTIONS(NAMEINSOURCE 'sys', NATIVE_TYPE 'int', UPDATABLE 'FALSE'),
+	id integer NOT NULL OPTIONS(NAMEINSOURCE 'id', NATIVE_TYPE 'int32'),
+	patientId integer NOT NULL OPTIONS(NAMEINSOURCE 'patientId', NATIVE_TYPE 'int32'),
+	dateRead string NOT NULL OPTIONS(NAMEINSOURCE 'dateRead', NATIVE_TYPE 'string'),
+	mam string NOT NULL OPTIONS(NAMEINSOURCE 'mam', NATIVE_TYPE 'string'),
+	sys integer NOT NULL OPTIONS(NAMEINSOURCE 'sys', NATIVE_TYPE 'int32'),
+	dia integer NOT NULL OPTIONS(NAMEINSOURCE 'dia', NATIVE_TYPE 'int32'),
+	pulse integer NOT NULL OPTIONS(NAMEINSOURCE 'pulse', NATIVE_TYPE 'int32'),
+	map integer NOT NULL OPTIONS(NAMEINSOURCE 'map', NATIVE_TYPE 'int32'),
+	glucoseType string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseType', NATIVE_TYPE 'string'),
+	glucoseValue integer NOT NULL OPTIONS(NAMEINSOURCE 'glucoseValue', NATIVE_TYPE 'int32'),
+	glucoseLabel string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseLabel', NATIVE_TYPE 'string'),
+	note string OPTIONS(NAMEINSOURCE 'note', NATIVE_TYPE 'string'),
 	CONSTRAINT PK_ID PRIMARY KEY(id)
 ) OPTIONS(NAMEINSOURCE 'BPGLevel', "teiid_rel:MATVIEW_TTL" '0') 
 AS
@@ -177,23 +177,23 @@ AS
 <metadata type="DDL"><![CDATA[
 
 CREATE FOREIGN TABLE Measurements (
-	BPGLevelObject object OPTIONS(NAMEINSOURCE 'this', NATIVE_TYPE 'com.redhat.summit.demo.datagrid.domain.BPGLevel', SELECTABLE 'FALSE', UPDATABLE 'FALSE', SEARCHABLE 'UNSEARCHABLE'),
-	id integer NOT NULL OPTIONS(NAMEINSOURCE 'id', NATIVE_TYPE 'int'),
-	dateRead string NOT NULL OPTIONS(NAMEINSOURCE 'dateRead', NATIVE_TYPE 'java.lang.String'),
-	dia integer NOT NULL OPTIONS(NAMEINSOURCE 'dia', NATIVE_TYPE 'int'),
-	glucoseLabel string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseLabel', NATIVE_TYPE 'java.lang.String'),
-	glucoseType string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseType', NATIVE_TYPE 'java.lang.String'),
-	glucoseValue integer NOT NULL OPTIONS(NAMEINSOURCE 'glucoseValue', NATIVE_TYPE 'int'),
-	mam string NOT NULL OPTIONS(NAMEINSOURCE 'mam', NATIVE_TYPE 'java.lang.String'),
-	map integer NOT NULL OPTIONS(NAMEINSOURCE 'map', NATIVE_TYPE 'int'),
-	note string OPTIONS(NAMEINSOURCE 'note', NATIVE_TYPE 'java.lang.String'),
-	patientId integer NOT NULL OPTIONS(NAMEINSOURCE 'patientId', NATIVE_TYPE 'int'),
-	pulse integer NOT NULL OPTIONS(NAMEINSOURCE 'pulse', NATIVE_TYPE 'int'),
-	sys integer NOT NULL OPTIONS(NAMEINSOURCE 'sys', NATIVE_TYPE 'int'),
+	id integer NOT NULL OPTIONS(NAMEINSOURCE 'id', NATIVE_TYPE 'int32'),
+	patientId integer NOT NULL OPTIONS(NAMEINSOURCE 'patientId', NATIVE_TYPE 'int32'),
+	dateRead string NOT NULL OPTIONS(NAMEINSOURCE 'dateRead', NATIVE_TYPE 'string'),
+	mam string NOT NULL OPTIONS(NAMEINSOURCE 'mam', NATIVE_TYPE 'string'),
+	sys integer NOT NULL OPTIONS(NAMEINSOURCE 'sys', NATIVE_TYPE 'int32'),
+	dia integer NOT NULL OPTIONS(NAMEINSOURCE 'dia', NATIVE_TYPE 'int32'),
+	pulse integer NOT NULL OPTIONS(NAMEINSOURCE 'pulse', NATIVE_TYPE 'int32'),
+	map integer NOT NULL OPTIONS(NAMEINSOURCE 'map', NATIVE_TYPE 'int32'),
+	glucoseType string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseType', NATIVE_TYPE 'string'),
+	glucoseValue integer NOT NULL OPTIONS(NAMEINSOURCE 'glucoseValue', NATIVE_TYPE 'int32'),
+	glucoseLabel string NOT NULL OPTIONS(NAMEINSOURCE 'glucoseLabel', NATIVE_TYPE 'string'),
+	note string OPTIONS(NAMEINSOURCE 'note', NATIVE_TYPE 'string'),
 	CONSTRAINT PK_ID PRIMARY KEY(id)
-) OPTIONS(NAMEINSOURCE 'BPGLevel', UPDATABLE 'TRUE', "teiid_ispn:cache" 'medicalCache');
+) OPTIONS(NAMEINSOURCE 'DEVICES.Measurements', UPDATABLE 'TRUE', "teiid_ispn:cache" 'bpgLevelCache');
 
 ]]></metadata>
+	<metadata type="NATIVE"/>
 </model>
 <model name="MAT_CACHE">
 <source connection-jndi-name="java:/DataGrid_DS" name="MAT_CACHE" translator-name="ispn-override"/>
@@ -227,6 +227,7 @@ CREATE FOREIGN TABLE PatientMatCache (
 ) OPTIONS(UPDATABLE 'TRUE', "teiid_ispn:cache" 'PatientMatCache');
 
 ]]></metadata>
+	<metadata type="NATIVE"/>
 </model>
 <translator name="ispn-override" type="infinispan-hotrod">
         <property name="SupportsDirectQueryProcedure" value="true"/>

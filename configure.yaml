@@ -39,3 +39,9 @@
     - name: "Deploy VDBs"
       shell: 'bash -c "{{ jboss_home }}/bin/jboss-cli.sh --connect --controller=localhost:{{ jboss_eap_instance_cli_default_port }} --file={{ cli_dir }}/deployVDB.cli "'
       ignore_errors: no
+    - name: "Populate JDG"
+      shell: 'bash -c "cd {{ jdg_cache_producer_dir }} &&  mvn clean package exec:java -Djdg.hostname=localhost -Djdg.port=11322 -Dpostgresql.hostname=localhost -Dpostgresql.port=5432 -Dpostgresql.dbname=medical -Dpostgresql.username=postgresql_dev -Dpostgresql.password=postgresql_dev -Djdg.cache.name.bloodpressurelevel=bloodPressureLevelCache -Djdg.cache.name.glucoselevel=glucoseLevelCache -Djdg.cache.name.bpglevel=bpgLevelCache"'
+      ignore_errors: no
+    - name: "Initialize JDV Materialization"
+      shell: 'bash -c "{{ jboss_home }}/bin/jboss-cli.sh --connect --controller=localhost:{{ jboss_eap_instance_cli_default_port }} --file={{ cli_dir }}/initializeMaterialization.cli"'
+      ignore_errors: no

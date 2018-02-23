@@ -57,3 +57,4 @@ jdg_instance_cli_port: "{{ jdg_instance_cli_default_port|int + jdg_instance_port
 # Local directory containing the used CLI files
 jdg_cli_list: { "setup-jdg-cache.cli" }
 cli_timeout: 25
+jdg_cache_producer_dir: "{{ install_home }}/src/jdg/cache-producer"

@@ -49,8 +49,8 @@ public class RemoteCacheManagerFactory {
 		ProtoSchemaBuilder protoSchemaBuilder = new ProtoSchemaBuilder();
 		try {
 			String generatedSchema = protoSchemaBuilder
-					.fileName("producer_rdbms.proto")
-					.packageName("com.redhat.datagrid.domain")
+					.fileName("jdg.proto")
+					.packageName("DEVICES")
 					.addClass(BloodPressureLevel.class)
 					.addClass(GlucoseLevel.class)
 					.addClass(BPGLevel.class)

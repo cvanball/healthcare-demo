@@ -1,0 +1,1 @@
+/subsystem=teiid:execute-query(vdb-name=RTDS,vdb-version=1,sql-query="merge into MAT_CACHE.PatientMatCache select * from PATIENT360.PATIENT OPTION NOCACHE", timeout-in-milli=60000)
