@@ -1,2 +1,2 @@
-data-source add --name=MR_DS --jndi-name=java:jboss/mrDS --connection-url=jdbc:postgresql://localhost:5432/mr --driver-name=postgresql --user-name=postgresql_dev --password=postgresql_dev
+data-source add --name=MR_DS --jndi-name=java:jboss/mrDS --connection-url=jdbc:postgresql://localhost:5432/mr --driver-name=postgresql --user-name=postgres --password=postgres
 data-source enable --name=MR_DS

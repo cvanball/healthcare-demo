@@ -1,4 +1,4 @@
 /subsystem=resource-adapters/resource-adapter=ICD10CM_RA:add(module=org.jboss.teiid.resource-adapter.file)
 /subsystem=resource-adapters/resource-adapter=ICD10CM_RA/connection-definitions=ICD10CM_DS:add(jndi-name=java:/ICD10CM, class-name=org.teiid.resource.adapter.file.FileManagedConnectionFactory, enabled=true, use-java-context=true)
-/subsystem=resource-adapters/resource-adapter=ICD10CM_RA/connection-definitions=ICD10CM_DS/config-properties=ParentDirectory:add(value=DATA_DIR)
+/subsystem=resource-adapters/resource-adapter=ICD10CM_RA/connection-definitions=ICD10CM_DS/config-properties=ParentDirectory:add(value=${jboss.home.dir}/healthcare-demo/icd10cm)
 /subsystem=resource-adapters/resource-adapter=ICD10CM_RA:activate

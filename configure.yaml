@@ -2,12 +2,6 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: "Configure createDatasource_ICD10CM.cli"
-      replace:
-        path: '{{ cli_dir }}/createDatasource_ICD10CM.cli'
-        regexp: '^(.+connection-definitions=ICD10CM_DS/config-properties=Parentdirectory:add\(value=).+\)'
-        replace: '\1{{ data_dir }})'
-        backup: yes 
     - name: "Configure createModule.cli"
       replace:
         path: '{{ cli_dir }}/createModule.cli'
@@ -17,7 +11,7 @@
     - name: "Configure deployVDB.cli"
       replace:
         path: '{{ cli_dir }}/deployVDB.cli'
-        regexp: 'deploy .*/(\w+-vdb\.xml)$'
+        regexp: 'deploy .*\/(\w+-vdb\.xml)$'
         replace: 'deploy {{ vdb_dir }}/\1'
         backup: yes
     - name: "Create JDV Modules"

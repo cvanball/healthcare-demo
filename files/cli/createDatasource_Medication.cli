@@ -1,2 +1,2 @@
-data-source add --name=Medication_DS --jndi-name=java:/medication --connection-url=jdbc:postgresql://localhost:5432/medication --driver-name=postgresql --user-name=postgresql_dev --password=postgresql_dev
+data-source add --name=Medication_DS --jndi-name=java:/medication --connection-url=jdbc:postgresql://localhost:5432/medication --driver-name=postgresql --user-name=postgres --password=postgres
 data-source enable --name=Medication_DS

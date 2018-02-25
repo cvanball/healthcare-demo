@@ -38,6 +38,18 @@
         dest: "{{ binaries_dir }}/"
     - name: "Install the Red Hat JBoss Data Grid Hot Rod Java Client Module into the JDV server"
       shell: 'bash -c "cp -R {{ binaries_dir }}/jboss-datagrid-7.1.2-eap-modules-remote-java-client/modules {{ jboss_home }}"'
+    - name: "Creating data directory {{ jboss_home }}/healthcare-demo/icd10cm"
+      file:
+        path: "{{ jboss_home }}/healthcare-demo/icd10cm"
+        state: directory      
+    - name: "Creating data directory {{ jboss_home }}/healthcare-demo/spark"
+      file:
+        path: "{{ jboss_home }}/healthcare-demo/spark"
+        state: directory              
+    - name: "Copy International Classifications of Diseases data"
+      copy:
+        src: "{{ playbook_dir }}/files/data/icd10cm.xml"
+        dest: "{{ jboss_home }}/healthcare-demo/icd10cm"                 
     - name: "Execute JDV CLI file(s)"
       shell: 'bash -c "nohup {{ jboss_home }}/bin/standalone.sh -c {{ jboss_eap_instance_standalone_file }} -Djboss.socket.binding.port-offset={{ jboss_eap_instance_port_offset }} -Djboss.management.native.port={{ jboss_eap_instance_cli_default_port }} -Djboss.server.base.dir={{ jboss_eap_instance_dir }}  & " && sleep {{ cli_timeout }} && {{ jboss_home }}/bin/jboss-cli.sh -c --controller=127.0.0.1:{{ jboss_eap_instance_cli_port }} --file="{{ cli_dir }}/{{ item | basename }}" && pkill -TERM -f "java(.*){{ jboss_eap_instance_dir }}"'
       with_items: "{{ jdv_cli_list }}"
