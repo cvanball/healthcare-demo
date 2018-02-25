@@ -11,7 +11,7 @@
     - name: "Configure deployVDB.cli"
       replace:
         path: '{{ cli_dir }}/deployVDB.cli'
-        regexp: 'deploy .*\/(\w+-vdb\.xml)$'
+        regexp: 'deploy .*\/(\w+-vdb\.xml)'
         replace: 'deploy {{ vdb_dir }}/\1'
         backup: yes
     - name: "Create JDV Modules"
