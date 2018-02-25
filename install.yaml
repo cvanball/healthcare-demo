@@ -49,7 +49,11 @@
     - name: "Copy International Classifications of Diseases data"
       copy:
         src: "{{ playbook_dir }}/files/data/icd10cm.xml"
-        dest: "{{ jboss_home }}/healthcare-demo/icd10cm"                 
+        dest: "{{ jboss_home }}/healthcare-demo/icd10cm"
+    - name: "Copy High/Low Bloodpressure Alert data"
+      copy:
+        src: "{{ playbook_dir }}/files/data/part-00000.csv"
+        dest: "{{ jboss_home }}/healthcare-demo/spark"                         
     - name: "Execute JDV CLI file(s)"
       shell: 'bash -c "nohup {{ jboss_home }}/bin/standalone.sh -c {{ jboss_eap_instance_standalone_file }} -Djboss.socket.binding.port-offset={{ jboss_eap_instance_port_offset }} -Djboss.management.native.port={{ jboss_eap_instance_cli_default_port }} -Djboss.server.base.dir={{ jboss_eap_instance_dir }}  & " && sleep {{ cli_timeout }} && {{ jboss_home }}/bin/jboss-cli.sh -c --controller=127.0.0.1:{{ jboss_eap_instance_cli_port }} --file="{{ cli_dir }}/{{ item | basename }}" && pkill -TERM -f "java(.*){{ jboss_eap_instance_dir }}"'
       with_items: "{{ jdv_cli_list }}"
