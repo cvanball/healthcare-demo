@@ -16,24 +16,24 @@
         "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-xxhdpi-v4/abc_btn_rating_star_on_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_ab_back_mtrl_am_alpha.png.flat",
-        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-xxhdpi-v4/abc_ic_ab_back_mtrl_am_alpha.png"
+        "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_small_material.xml.flat",
+        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable/abc_ratingbar_small_material.xml"
     },
     {
         "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxhdpi-v17_abc_ic_ab_back_mtrl_am_alpha.png.flat",
         "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-ldrtl-xxhdpi-v17/abc_ic_ab_back_mtrl_am_alpha.png"
     },
     {
-        "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_small_material.xml.flat",
-        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable/abc_ratingbar_small_material.xml"
-    },
-    {
-        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
-        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-mdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_ab_back_mtrl_am_alpha.png.flat",
+        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-xxhdpi-v4/abc_ic_ab_back_mtrl_am_alpha.png"
     },
     {
         "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/Users/cvanball/Projects/git/Healthcare/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-mdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/layout_design_navigation_item_subheader.xml.flat",
@@ -56,12 +56,12 @@
         "source": "/Users/cvanball/Projects/git/Healthcare/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/anim_abc_slide_out_top.xml.flat",
-        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/anim/abc_slide_out_top.xml"
-    },
-    {
         "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/drawable_design_fab_background.xml.flat",
         "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/design-23.4.0.aar/c46abf72d40f6961afc9d64fef5795c3/res/drawable/design_fab_background.xml"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/anim_abc_slide_out_top.xml.flat",
+        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/anim/abc_slide_out_top.xml"
     },
     {
         "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -84,12 +84,12 @@
         "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
         "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -108,16 +108,16 @@
         "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/layout_abc_action_bar_title_item.xml.flat",
-        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/layout/abc_action_bar_title_item.xml"
+        "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
         "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/layout_notification_template_lines.xml.flat",
         "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/layout/notification_template_lines.xml"
     },
     {
-        "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
+        "merged": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/layout_abc_action_bar_title_item.xml.flat",
+        "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/layout/abc_action_bar_title_item.xml"
     },
     {
         "merged": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",

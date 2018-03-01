@@ -8,5 +8,23 @@
     - name: "Start JDV 6.4 Server with port-offset {{ jboss_eap_instance_port_offset }}"
       shell: 'bash -c "nohup {{ jboss_home }}/bin/standalone.sh -c {{ jboss_eap_instance_standalone_file }} -Djboss.socket.binding.port-offset={{ jboss_eap_instance_port_offset }} -Djboss.management.native.port={{ jboss_eap_instance_cli_default_port }} -Djboss.server.base.dir={{ jboss_eap_instance_dir }} &"'
       ignore_errors: no
+    - name: "Waiting 10 seconds for reloading"
+      pause:
+        seconds: 10
+    - name: "Populate JDG"
+      shell: 'bash -c "cd {{ jdg_cache_producer_dir }} &&  mvn clean package exec:java -Djdg.hostname=localhost -Djdg.port=11322 -Dpostgresql.hostname={{ psql_host }} -Dpostgresql.port={{ psql_port }} -Dpostgresql.dbname={{ psql_dbname }} -Dpostgresql.username={{ psql_username }} -Dpostgresql.password={{ psql_password }} -Djdg.cache.name.bloodpressurelevel=bloodPressureLevelCache -Djdg.cache.name.glucoselevel=glucoseLevelCache -Djdg.cache.name.bpglevel=bpgLevelCache"'
+      ignore_errors: no
+    - name: "Initialize JDV Materialization"
+      shell: 'bash -c "{{ jboss_home }}/bin/jboss-cli.sh --connect --controller=localhost:{{ jboss_eap_instance_cli_default_port }} --file={{ cli_dir }}/initializeMaterialization.cli"'
+      ignore_errors: no     
+    - pause:
+        prompt: "Press Enter to stop the JDG and JDV server" 
+    - name: "Stop JDV 6.4 Server"
+      shell: 'pkill -TERM -f "java(.*){{ jboss_eap_instance_dir }}"'
+      ignore_errors: no
+    - name: "Stop JDG 7.1.2 Server"      
+      shell: 'pkill -TERM -f "java(.*){{ jdg_instance_dir }}"'
+      ignore_errors: no        
+    
         
    

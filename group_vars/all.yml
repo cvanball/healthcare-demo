@@ -59,3 +59,10 @@ jdg_instance_cli_port: "{{ jdg_instance_cli_default_port|int + jdg_instance_port
 jdg_cli_list: { "setup-jdg-cache.cli" }
 cli_timeout: 25
 jdg_cache_producer_dir: "{{ install_home }}/src/jdg/cache-producer"
+
+# =========== PostgreSQL DB ===========
+psql_host: localhost
+psql_port: 5432
+psql_dbname: medical
+psql_username: postgres
+psql_password: postgres

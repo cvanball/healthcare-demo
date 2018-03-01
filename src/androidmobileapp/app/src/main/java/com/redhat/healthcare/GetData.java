@@ -7,18 +7,20 @@ import android.util.Base64;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 /**
  * An asynchronous task whose result is a {@link PatientChart}.
  */
 class GetData extends AsyncTask< Void, Void, PatientChart > {
 
-    private static final String HOST = "localhost"; // when DV is running locally (use localhost in browser)
+    private static final String HOST = "10.0.2.2"; // when DV is running locally (use localhost in browser)
     private static final String PORT = "8080";
     private static final String PSWD = "redhat1!";
     private static final String USER = "teiidUser";
@@ -27,7 +29,7 @@ class GetData extends AsyncTask< Void, Void, PatientChart > {
         + HOST
         + ':'
         + PORT
-        + "/odata/Alerts/Alerts.messages(firstName='%s',lastName='%s')?$format=json";
+        + "/odata/Alerts/Alerts.messages?$format=json&$filter";
 
     private final PatientChartCallback callback;
     private ProgressDialog dialog;
@@ -84,7 +86,10 @@ class GetData extends AsyncTask< Void, Void, PatientChart > {
         HttpURLConnection urlConnection = null;
 
         try {
-            final URL url = new URL( urlAsString );
+
+            String urltmp = urlAsString + URLEncoder.encode("=firstname eq '%s' && lastname eq '%s'", "UTF-8");
+            final URL url = new URL(urltmp);
+
             final String userCredentials = ( user + ':' + pswd );
             final String encoding =
                 new String( Base64.encode( userCredentials.getBytes(), Base64.DEFAULT ) ).replaceAll( "\\s+", "" );

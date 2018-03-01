@@ -77,21 +77,6 @@
             ]
         },
         {
-            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-te-rIN_values-te-rIN.arsc.flat",
-            "map": [
-                {
-                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-te-rIN/values-te-rIN.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,169,277,400,509,620,710,815,940,1022,1104,1189,1302,1410,1510,1621,1723,1840,1967,2068",
-                        "endColumns": "113,107,122,108,110,89,104,124,81,81,84,112,107,99,110,101,116,126,100,100",
-                        "endOffsets": "164,272,395,504,615,705,810,935,1017,1099,1184,1297,1405,1505,1616,1718,1835,1962,2063,2164"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/values-v17_values-v17.arsc.flat",
             "map": [
                 {
@@ -103,6 +88,21 @@
                         "endLines": "4,8,11,14,17,21,25,28,31,34,38,41,45,49",
                         "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12",
                         "endOffsets": "223,451,609,759,931,1159,1401,1572,1746,1915,2188,2388,2592,2921"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-te-rIN_values-te-rIN.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-te-rIN/values-te-rIN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,169,277,400,509,620,710,815,940,1022,1104,1189,1302,1410,1510,1621,1723,1840,1967,2068",
+                        "endColumns": "113,107,122,108,110,89,104,124,81,81,84,112,107,99,110,101,116,126,100,100",
+                        "endOffsets": "164,272,395,504,615,705,810,935,1017,1099,1184,1297,1405,1505,1616,1718,1835,1962,2063,2164"
                     }
                 }
             ]
@@ -404,21 +404,6 @@
             ]
         },
         {
-            "outputFile": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/values-h720dp-v13_values-h720dp-v13.arsc.flat",
-            "map": [
-                {
-                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-h720dp-v13/values-h720dp-v13.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "66",
-                        "endOffsets": "117"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/values-eu-rES_values-eu-rES.arsc.flat",
             "map": [
                 {
@@ -429,6 +414,21 @@
                         "startOffsets": "55,164,272,395,493,603,689,795,919,1006,1090,1172,1281,1391,1490,1599,1712,1823,1960,2059",
                         "endColumns": "108,107,122,97,109,85,105,123,86,83,81,108,109,98,108,112,110,136,98,100",
                         "endOffsets": "159,267,390,488,598,684,790,914,1001,1085,1167,1276,1386,1485,1594,1707,1818,1955,2054,2155"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/values-h720dp-v13_values-h720dp-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
                     }
                 }
             ]
@@ -738,21 +738,6 @@
             ]
         },
         {
-            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-sw_values-sw.arsc.flat",
-            "map": [
-                {
-                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-sw/values-sw.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,158,266,389,487,595,685,790,907,989,1072,1154,1255,1364,1463,1570,1679,1784,1903,2000",
-                        "endColumns": "102,107,122,97,107,89,104,116,81,82,81,100,108,98,106,108,104,118,96,100",
-                        "endOffsets": "153,261,384,482,590,680,785,902,984,1067,1149,1250,1359,1458,1565,1674,1779,1898,1995,2096"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-cs_values-cs.arsc.flat",
             "map": [
                 {
@@ -763,6 +748,21 @@
                         "startOffsets": "55,162,271,395,497,606,692,797,914,995,1076,1160,1264,1373,1472,1578,1688,1795,1917,2015",
                         "endColumns": "106,108,123,101,108,85,104,116,80,80,83,103,108,98,105,109,106,121,97,100",
                         "endOffsets": "157,266,390,492,601,687,792,909,990,1071,1155,1259,1368,1467,1573,1683,1790,1912,2010,2111"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-sw_values-sw.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-sw/values-sw.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,158,266,389,487,595,685,790,907,989,1072,1154,1255,1364,1463,1570,1679,1784,1903,2000",
+                        "endColumns": "102,107,122,97,107,89,104,116,81,82,81,100,108,98,106,108,104,118,96,100",
+                        "endOffsets": "153,261,384,482,590,680,785,902,984,1067,1149,1250,1359,1458,1565,1674,1779,1898,1995,2096"
                     }
                 }
             ]
@@ -967,21 +967,6 @@
             ]
         },
         {
-            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-ro_values-ro.arsc.flat",
-            "map": [
-                {
-                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-ro/values-ro.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,176,284,407,511,624,712,824,945,1030,1112,1195,1307,1420,1520,1634,1739,1845,1966,2069",
-                        "endColumns": "120,107,122,103,112,87,111,120,84,81,82,111,112,99,113,104,105,120,102,100",
-                        "endOffsets": "171,279,402,506,619,707,819,940,1025,1107,1190,1302,1415,1515,1629,1734,1840,1961,2064,2165"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/values-port_values-port.arsc.flat",
             "map": [
                 {
@@ -992,6 +977,21 @@
                         "startOffsets": "55",
                         "endColumns": "55",
                         "endOffsets": "106"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-ro_values-ro.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-ro/values-ro.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,176,284,407,511,624,712,824,945,1030,1112,1195,1307,1420,1520,1634,1739,1845,1966,2069",
+                        "endColumns": "120,107,122,103,112,87,111,120,84,81,82,111,112,99,113,104,105,120,102,100",
+                        "endOffsets": "171,279,402,506,619,707,819,940,1025,1107,1190,1302,1415,1515,1629,1734,1840,1961,2064,2165"
                     }
                 }
             ]
@@ -1148,21 +1148,6 @@
             ]
         },
         {
-            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-bg_values-bg.arsc.flat",
-            "map": [
-                {
-                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-bg/values-bg.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,170,281,409,516,621,707,812,933,1012,1090,1173,1287,1396,1496,1610,1716,1824,1947,2046",
-                        "endColumns": "114,110,127,106,104,85,104,120,78,77,82,113,108,99,113,105,107,122,98,100",
-                        "endOffsets": "165,276,404,511,616,702,807,928,1007,1085,1168,1282,1391,1491,1605,1711,1819,1942,2041,2142"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/values-es_values-es.arsc.flat",
             "map": [
                 {
@@ -1173,6 +1158,21 @@
                         "startOffsets": "55,172,280,403,516,624,709,810,938,1014,1090,1172,1279,1379,1478,1586,1693,1800,1922,2022",
                         "endColumns": "116,107,122,112,107,84,100,127,75,75,81,106,99,98,107,106,106,121,99,100",
                         "endOffsets": "167,275,398,511,619,704,805,933,1009,1085,1167,1274,1374,1473,1581,1688,1795,1917,2017,2118"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-bg_values-bg.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-bg/values-bg.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,170,281,409,516,621,707,812,933,1012,1090,1173,1287,1396,1496,1610,1716,1824,1947,2046",
+                        "endColumns": "114,110,127,106,104,85,104,120,78,77,82,113,108,99,113,105,107,122,98,100",
+                        "endOffsets": "165,276,404,511,616,702,807,928,1007,1085,1168,1282,1391,1491,1605,1711,1819,1942,2041,2142"
                     }
                 }
             ]
@@ -1253,21 +1253,6 @@
             ]
         },
         {
-            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-lv_values-lv.arsc.flat",
-            "map": [
-                {
-                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-lv/values-lv.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,175,283,406,514,623,709,813,935,1017,1099,1184,1293,1405,1504,1615,1724,1829,1948,2047",
-                        "endColumns": "119,107,122,107,108,85,103,121,81,81,84,108,111,98,110,108,104,118,98,100",
-                        "endOffsets": "170,278,401,509,618,704,808,930,1012,1094,1179,1288,1400,1499,1610,1719,1824,1943,2042,2143"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-v21_values-v21.arsc.flat",
             "map": [
                 {
@@ -1311,6 +1296,21 @@
             ]
         },
         {
+            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-lv_values-lv.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-lv/values-lv.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,175,283,406,514,623,709,813,935,1017,1099,1184,1293,1405,1504,1615,1724,1829,1948,2047",
+                        "endColumns": "119,107,122,107,108,85,103,121,81,81,84,108,111,98,110,108,104,118,98,100",
+                        "endOffsets": "170,278,401,509,618,704,808,930,1012,1094,1179,1288,1400,1499,1610,1719,1824,1943,2042,2143"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/values-hdpi-v4_values-hdpi-v4.arsc.flat",
             "map": [
                 {
@@ -1327,16 +1327,16 @@
             ]
         },
         {
-            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-h720dp-v13_values-h720dp-v13.arsc.flat",
+            "outputFile": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/values-pl_values-pl.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-pl/values-pl.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "66",
-                        "endOffsets": "117"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,171,279,402,504,612,698,807,926,1004,1081,1163,1272,1381,1480,1589,1700,1808,1931,2027",
+                        "endColumns": "115,107,122,101,107,85,108,118,77,76,81,108,108,98,108,110,107,122,95,100",
+                        "endOffsets": "166,274,397,499,607,693,802,921,999,1076,1158,1267,1376,1475,1584,1695,1803,1926,2022,2123"
                     }
                 }
             ]
@@ -1357,16 +1357,16 @@
             ]
         },
         {
-            "outputFile": "/Users/cvanball/Projects/git/healthcare-demo/src/androidmobileapp/app/build/intermediates/res/merged/debug/values-pl_values-pl.arsc.flat",
+            "outputFile": "/Users/cvanball/Projects/git/Healthcare/app/build/intermediates/res/merged/debug/values-h720dp-v13_values-h720dp-v13.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-pl/values-pl.xml",
+                    "source": "/Users/cvanball/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/420ffbbbaf6a09d9594923a000242bfc/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,171,279,402,504,612,698,807,926,1004,1081,1163,1272,1381,1480,1589,1700,1808,1931,2027",
-                        "endColumns": "115,107,122,101,107,85,108,118,77,76,81,108,108,98,108,110,107,122,95,100",
-                        "endOffsets": "166,274,397,499,607,693,802,921,999,1076,1158,1267,1376,1475,1584,1695,1803,1926,2022,2123"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
                     }
                 }
             ]
