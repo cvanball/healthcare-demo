@@ -33,6 +33,6 @@ $ ansible-playbook install.yaml
 ### Running the healthcare demo
 
 ``` bash
-$ cd healthcare-demo/target
+$ cd healthcare-demo
 $ ansible-playbook run.yaml
 ```
